@@ -5,7 +5,6 @@ import pic3 from "./img/pic3.jpg";
 import pic4 from "./img/pic4.jpg";
 import pic5 from "./img/pic5.jpg";
 
-
 const imageArray = [
   pic1,
   pic2,
@@ -18,7 +17,7 @@ export class Carousel extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { currentPic: Math.floor(Math.random()*12) };
+    this.state = { currentPic: Math.floor(Math.random()*4) };
 
     this.interval = null;
 
@@ -26,7 +25,7 @@ export class Carousel extends React.Component {
   }
 
   nextPic() {
-    let next = Math.floor(Math.random()*12);
+    let next = Math.floor(Math.random()*4);
     this.setState({ currentPic: next });
   }
 

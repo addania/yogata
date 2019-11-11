@@ -12,8 +12,9 @@ return (
 <div>
 <Layout>
   
-  <h2 style={{textAlign: "center"}}>Coding Adventures</h2>
-  <p style={{textAlign: "center"}}>Welcome to the blog about my journey through coding universe. I hope you will enjoy reading and find some useful information</p>
+  <h2 style={{textAlign: "center"}}>Sport Adventures</h2>
+  <p style={{textAlign: "center"}}>Do you feel like yoga or tabata? Let's get moving together then. 
+  Below you can find some of my trainings with a wonderful sport group "Fit am Dienstag"</p>
   <Carousel />
   
   <h3 style={{textAlign: "center"}}>ALL ARTICLES</h3>
