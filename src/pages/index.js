@@ -1,8 +1,9 @@
 import React from "react";
 import Layout from "../components/layout.js";
 import { Link, graphql } from "gatsby";
-import SEO from "../components/seo.js"
-import { Carousel } from "../components/carousel.js"
+import SEO from "../components/seo.js";
+import { Carousel } from "../components/carousel.js";
+import { BackgroundVideo } from "../components/video.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css";
 
@@ -10,8 +11,10 @@ export default ( {data} ) => {
   console.log(data)
 return (
 <div>
-<Layout>
-  
+{/*<BackgroundVideo />
+//<div className="content">
+//<Layout className="content">*/}
+ <Layout>
   <h2 style={{textAlign: "center"}}>Sport Adventures</h2>
   <p style={{textAlign: "center"}}>Do you feel like yoga or tabata? Let's get moving together then. 
   Below you can find some of my trainings with a wonderful sport group "Fit am Dienstag"</p>
@@ -44,6 +47,7 @@ return (
         </table>
 
 </Layout>
+{/*</div>*/}
 </div>
 )
 }
