@@ -1,0 +1,57 @@
+---
+title: "Tabata 00.00.2019"
+date: "2019-00-00"
+---
+
+when sam joined (may, june)
+
+![](https://i.imgur.com/pTuwn96.jpg "Photo by bruce mars from Pexels")<p style="font-size: 12px; text-align: right">*Photo by bruce mars from Pexels*</p>
+
+
+**General warm-up**
+- 5 minutes run
+
+**Round 1**
+- Jack & Lunge
+- Infinite hands
+
+**Round 2**
+- High knees & Hot feet
+- Push-up with clap
+
+**Round 3**
+- Side leg mountain climbers
+- Leg raise crunches
+
+**Round 4**
+- X squat jumps
+- Push-up side walk
+
+**Round 5**
+- Back triceps high kick
+- 
+
+**Round 6**
+- Toe tap side jump
+- Plank leg raises
+
+**Round 7**
+- Squat knee raise side crunch
+- Wild thing arm raises
+
+**Round 8**
+- Burpie lunge
+- Side plank leg raise
+
+**Bonus**
+- Burpie lunge
+
+**Cool down**
+- General stretching
+
+
+![](https://i.imgur.com/FnbnSmg.jpg "Photo by Andrea Piacquadio from Pexels")<p style="font-size: 12px; text-align: right">*Photo by Andrea Piacquadio from Pexels*</p>
+
+**Sketch :)**
+
+![](https://i.imgur.com/VTyPMZ7.jpg "Hand-drawing by Addania")
