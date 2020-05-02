@@ -16,8 +16,7 @@ return (
 //<Layout className="content">*/}
  <Layout>
   <h2 style={{textAlign: "center"}}>Sport Adventures</h2>
-  <p style={{textAlign: "center"}}>Do you feel like yoga or tabata? Let's get moving together then. 
-  Below you can find some of my trainings with a wonderful sport group "Fit am Dienstag"</p>
+  <p style={{textAlign: "center"}}>Next online training will be yoga on Monday! Looking forward to everyone</p>
   <Carousel />
   
   <h3 style={{textAlign: "center"}}>ALL ARTICLES</h3>
@@ -28,6 +27,7 @@ return (
             <tr>
               <th>Date</th>
               <th>Title</th>
+              <th>Trainer</th>
               <th>Excerpt</th>
               
             </tr>
@@ -39,7 +39,8 @@ return (
                 <Link to={node.fields.slug}>
                 <td style={{color: "teal"}}>{node.frontmatter.title}</td>
                 </Link>
-                <td>{node.excerpt}</td>
+                <td>{node.frontmatter.trainer}</td>
+                <td>{removeTrainerFromExcerpt(node.excerpt)}</td>
                 
               </tr>
             ))}
@@ -53,26 +54,29 @@ return (
 }
 
 export const query = graphql` 
-query {
-  allMarkdownRemark (sort: {fields:[frontmatter___date], order:DESC}) {
-    edges {
-      node {
-        id
-        excerpt
-        rawMarkdownBody
-        frontmatter {
-          date
-          title
+  query {
+    allMarkdownRemark (sort: {fields:[frontmatter___date], order:DESC}) {
+      edges {
+        node {
+          id
+          excerpt
+          rawMarkdownBody
+          frontmatter {
+            date
+            title
+            trainer
+          }
+          fields {
+            slug
+          }
+          timeToRead
+          html
         }
-        fields {
-          slug
-        }
-        timeToRead
-        html
       }
+      totalCount
     }
-    totalCount
-  }
-  }
+    }
   ` 
-  
+  const removeTrainerFromExcerpt = (string) => {
+    return string.replace(/(with Mia )|(with Tony )/, "")
+  }

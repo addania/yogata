@@ -10,6 +10,6 @@ export default () =>
   <div style={{textAlign: "center"}}>
   <h2>Get in Touch</h2>
   <Carousel/>
-  <p>Do you have some constructive feedback? You can contact me at: <code>zabacinka@yahoo.com</code></p>
+  <p>Do you want to join our Sports Group? Contact us at: <code>zabacinka@yahoo.com</code></p>
   </div>
 </Layout>
