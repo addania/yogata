@@ -37,7 +37,7 @@ return (
     
     <hr />
     <footer style={{ paddingBottom: "20px" }}>
-        <p style={{  textAlign: "center", fontSize: "14px", marginBottom:"0", color:"grey"}}>© 2019 Design and Development by {data.site.siteMetadata.author}</p>
+        <p style={{  textAlign: "center", fontSize: "14px", marginBottom:"0", color:"grey"}}>© 2020 Design and Development by {data.site.siteMetadata.author}</p>
     </footer>
   </div>
 )
