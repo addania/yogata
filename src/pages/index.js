@@ -16,7 +16,7 @@ return (
 //<Layout className="content">*/}
  <Layout>
   <h2 style={{textAlign: "center"}}>Sport Adventures</h2>
-  <p style={{textAlign: "center"}}>Next online training will be yoga on Monday! Looking forward to everyone</p>
+  <p style={{textAlign: "center"}}>Our next online training will be yoga on Wednesday where we will train towards a beautiful Bird of Paradise pose!</p>
   <Carousel />
   
   <h3 style={{textAlign: "center"}}>ALL ARTICLES</h3>
