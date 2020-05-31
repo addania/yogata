@@ -1,5 +1,5 @@
 ---
-title: "Tabata 11.05.2020"
+title: "Endurance 11.05.2020"
 date: "2020-05-11"
 trainer: "Mia"
 ---
