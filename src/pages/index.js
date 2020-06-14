@@ -16,7 +16,7 @@ return (
 //<Layout className="content">*/}
  <Layout>
   <h2 style={{textAlign: "center"}}>Sport Adventures</h2>
-  <p style={{textAlign: "center"}}>Next training is scheduled on Monday 08.06 at 18:00. Monday Tabata here we go! :)</p>
+  <p style={{textAlign: "center"}}>Next training is scheduled on Monday. Tabata is on fire! :)</p>
   <Carousel />
   
   <h3 style={{textAlign: "center"}}>ALL ARTICLES</h3>
