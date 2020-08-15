@@ -15,9 +15,6 @@ return (
 //<div className="content">
 //<Layout className="content">*/}
  <Layout>
-  <h2 style={{textAlign: "center"}}>Sport Adventures</h2>
-  <p style={{textAlign: "center"}}>Welcome to my free online trainings :)</p>
-  <p style={{textAlign: "center"}}>Join Yoga classes on Thursdays or Tabata on Mondays</p>
   <Carousel />
   <h3 style={{textAlign: "center"}}>SCHEDULE</h3>
   <p style={{textAlign: "center"}}>🔥Tabata: Mondays at 18:00 CET</p>
@@ -42,8 +39,8 @@ return (
             {data.allMarkdownRemark.edges.map(({ node }, index) => (
               <tr key={index}>
                 <td>{node.frontmatter.date}</td>
-                <Link to={node.fields.slug}>
-                <td style={{color: "teal"}}>{node.frontmatter.title}</td>
+                <Link to={node.fields.slug} style={{backgroundImage: "none"}}>
+                <td style={{color: "teal"}}>{node.frontmatter.title.split(" ")[0]}</td>
                 </Link>
                 {/*<td>{node.frontmatter.trainer}</td>*/}
                 <td>{removeTrainerFromExcerpt(node.excerpt)}</td>

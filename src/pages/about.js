@@ -7,10 +7,6 @@ import { Carousel } from "../components/carousel.js"
 
 export default ({ data }) => (
   <Layout>
-    <h2 style={{ textAlign: "center" }}>
-      About {data.site.siteMetadata.title}
-    </h2>
-    <p style={{ textAlign: "center" }}>with Mia</p>
     <Carousel />
     <p style={{ textAlign: "justify", textJustify: "inter-word" }}>
       <blockquote>

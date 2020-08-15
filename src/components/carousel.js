@@ -1,4 +1,5 @@
 import React from "react"
+import "./carousel.css"
 import pic1 from "./img/pic1.jpg"
 import pic2 from "./img/pic2.jpg"
 import pic3 from "./img/pic3.jpg"
@@ -64,16 +65,42 @@ export class Carousel extends React.Component {
   render() {
     let src = imageArray[this.state.currentPic]
     return (
-      <img
-        src={src}
-        alt=""
-        style={{
-          display: "block",
-          marginLeft: "auto",
-          marginRight: "auto",
-          width: "100%",
-        }}
-      />
+      <div style={{ position: "relative" }}>
+        <img
+          src={src}
+          alt=""
+          style={{
+            display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: "100%",
+          }}
+        />
+        <div className="label moveLabel1"
+          style={{
+            position: "absolute",
+            top: "40px",
+            left: "0",
+            backgroundColor: "rgba(0,0,0, 0.7)",
+          }}
+        ><p style={{ color: "white", margin: "20px 20px 0px 20px",fontSize: "38px", lineHeight: "38px" }}>SPORT ADVENTURES</p>
+          <p style={{ color: "white", margin: "20px" }}>
+            Welcome to my free online trainings
+          </p>
+        </div>
+        <div className="label moveLabel2"
+          style={{
+            position: "absolute",
+            bottom: "40px",
+            right: "0",
+            backgroundColor: "rgba(0,0,0, 0.7)",
+          }}
+        >
+          <p style={{ color: "white", margin: "20px" }}>
+            Join Yoga & Tabata classes
+          </p>
+        </div>
+      </div>
     )
   }
 }

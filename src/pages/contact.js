@@ -7,27 +7,25 @@ import { Carousel } from "../components/carousel.js"
 export default () => (
   <Layout>
     <div style={{ textAlign: "center" }}>
-      <h2>Get in Touch</h2>
-      <p>with Mia</p>
       <Carousel />
       <p>Are you interested in personal trainings?</p>
       <p>
         E-mail me:
-        <code>
-          <p>zabacinka@yahoo.com </p>
-        </code>
+
+          <p style={{ color: "teal" }}><a style={{ backgroundImage: "none", color: "teal" }} onClick="javascript:window.open('mailto:zabacinka@yahoo.com', 'mail');event.preventDefault()" href="mailto:zabacinka@yahoo.com?subject=Yogata Contact Request">zabacinka@yahoo.com </a></p>
+
       </p>
       <p>
         Follow me on Instagram:{" "}
-        <code>
-          <p style={{ textDecoration: "none" }}>instagram.com/_sportsoul</p>
-        </code>
+
+          <p><a style={{ backgroundImage: "none", color: "teal" }} href="https://instagram.com/_sportsoul">instagram.com/_sportsoul</a></p>
+
       </p>
       <p>
         Do you enjoy trainings? I would be grateful for donations. Namaste{" "}
-        <code>
-          <p style={{ textDecoration: "none" }}>Send me a message for details</p>
-        </code>
+
+          <p style={{ backgroundImage: "none", color: "teal" }}>Send me a message for details</p>
+
       </p>
     </div>
   </Layout>

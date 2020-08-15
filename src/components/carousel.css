@@ -1,0 +1,33 @@
+/*.label {
+    background-color: rgba(0,0,0, 0.4);
+    animation-name: gradientColor;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes gradientColor {
+    from {background-color: rgba(0,0,0, 0.4);}
+    to {background-color: rgba(0,0,0, 0.7);}
+}
+*/
+.moveLabel1 {
+    animation: move1 1s infinite;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+}
+
+.moveLabel2 {
+    animation: move2 2s infinite;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+
+}
+
+@keyframes move1 {
+    from {top: 0px;}
+    to {top: 40px;}
+  }
+  @keyframes move2 {
+    from {bottom: 0px;}
+    to {bottom: 40px;}
+  }
