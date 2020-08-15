@@ -27,20 +27,20 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-918af48a1ba64e8ad47b.js"
+    "url": "webpack-runtime-938493f70a16f2d688bb.js"
   },
   {
-    "url": "commons-3a9a6c2921aff7d3152c.js"
+    "url": "commons-ddfee218c7ef5a85a2dd.js"
   },
   {
-    "url": "app-c752e5650b774e250254.js"
+    "url": "app-9cd87650680e76cb0b74.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-568c113b24a9e8ed8db8.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "168f9a9f3d6ef68422a482b2dc1e6890"
+    "revision": "416b1e81af068865c8fb34d17abab996"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -137,7 +137,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/yogata/app-c752e5650b774e250254.js`))) {
+  if (!resources || !(await caches.match(`/yogata/app-9cd87650680e76cb0b74.js`))) {
     return await fetch(event.request)
   }
 
