@@ -16,10 +16,16 @@ return (
 //<Layout className="content">*/}
  <Layout>
   <h2 style={{textAlign: "center"}}>Sport Adventures</h2>
-  <p style={{textAlign: "center"}}>We see each other again on Monday on our Tabata training :)</p>
+  <p style={{textAlign: "center"}}>Welcome to my free online trainings :)</p>
+  <p style={{textAlign: "center"}}>Join Yoga classes on Thursdays or Tabata on Mondays</p>
   <Carousel />
-  
-  <h3 style={{textAlign: "center"}}>ALL ARTICLES</h3>
+  <h3 style={{textAlign: "center"}}>SCHEDULE</h3>
+  <p style={{textAlign: "center"}}>🔥Tabata: Mondays at 18:00 CET</p>
+  <p style={{textAlign: "center"}}>🌺Yoga: Thursdays at 18:00 CET</p>
+  <h3 style={{textAlign: "center"}}>CLASS DETAILS</h3>
+  <p style={{textAlign: "center"}}>Link: https://meet.jit.si/fitwithmia</p>
+  <p style={{textAlign: "center"}}>Password: fitwithmia</p>
+  <h3 style={{textAlign: "center"}}>ALL TRAININGS</h3>
   <p style={{textAlign: "center", fontSize:"15px", color: "grey"}}>{data.allMarkdownRemark.totalCount} Posts</p>
   
   <table style={{textAlign: "justify", textJustify: "inter-word"}}>
@@ -27,8 +33,8 @@ return (
             <tr>
               <th>Date</th>
               <th>Title</th>
-              <th>Trainer</th>
-              <th>Excerpt</th>
+              {/*<th>Trainer</th>*/}
+              <th>Preview</th>
               
             </tr>
           </thead>
@@ -39,7 +45,7 @@ return (
                 <Link to={node.fields.slug}>
                 <td style={{color: "teal"}}>{node.frontmatter.title}</td>
                 </Link>
-                <td>{node.frontmatter.trainer}</td>
+                {/*<td>{node.frontmatter.trainer}</td>*/}
                 <td>{removeTrainerFromExcerpt(node.excerpt)}</td>
                 
               </tr>
