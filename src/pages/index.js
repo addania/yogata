@@ -19,11 +19,13 @@ export default ({ data }) => {
         <Carousel />
         <h3 style={{ textAlign: "center" }}>CLASSES</h3>
         <div className="row" style={{ margin: "0" }}>
-          <div className="col-6" style={{ padding: "0 20px 0 0" }}>
-            <img src="https://i.imgur.com/iOw2mwe.jpg?1" />
-            <p style={{ textAlign: "center",backgroundColor: "rgba(0,0,0, 0.7)", color:"white", padding: "20px 0 20px 0" }}>
+          <div className="col-6" style={{ padding: "0 20px 0 0", position: "relative" }}>
+            <img src="https://i.imgur.com/iOw2mwe.jpg?1"style={{position: "relative"}} />
+            <div style={{position: "absolute"}}>
+            <p style={{textAlign: "center",backgroundColor: "rgba(0,0,0, 0.7)", color:"white", padding: "20px 0 20px 0" }}>
               🔥TABATA: Mondays at 18:00 CET
             </p>
+            </div>
           </div>
           <div className="col-6" style={{ padding: "0 0 0 20px" }}>
             <img src="https://i.imgur.com/kSnbEOJ.jpg?1" />
