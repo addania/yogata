@@ -10,6 +10,11 @@ import { ReactComponent as ReactLogo } from "./logo.svg"
 
 export default ({ data }) => {
   console.log(data)
+  const [filter, setFilter] = React.useState("")
+  console.log("filter", filter)
+  const filteredData = data.allMarkdownRemark.edges.filter(n => {
+    return n.node.frontmatter.title.toLowerCase().includes(filter)
+  })
   return (
     <div>
       {/*<BackgroundVideo />
@@ -19,31 +24,163 @@ export default ({ data }) => {
         <Carousel />
         <h3 style={{ textAlign: "center" }}>CLASSES</h3>
         <div className="row" style={{ margin: "0" }}>
-          <div className="col-6" style={{ padding: "0 20px 0 0", position: "relative" }}>
-            <img src="https://i.imgur.com/iOw2mwe.jpg?1"style={{position: "relative"}} />
-            <div style={{position: "absolute"}}>
-            <p style={{textAlign: "center",backgroundColor: "rgba(0,0,0, 0.7)", color:"white", padding: "20px 0 20px 0" }}>
-              🔥TABATA: Mondays at 18:00 CET
-            </p>
+          <div
+            className="col-6"
+            style={{
+              padding: "0 20px 0 0",
+              position: "relative",
+              cursor: "pointer",
+            }}
+            onClick={() => setFilter("tabata")}
+          >
+            <img
+              src="https://i.imgur.com/iOw2mwe.jpg?1"
+              style={{ position: "relative" }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                top: "40px",
+                left: "0",
+                width: "90%",
+              }}
+            >
+              <p
+                style={{
+                  backgroundColor: "rgba(0,0,0, 0.7)",
+                  color: "white",
+                  padding: "20px 0 20px 10px",
+                  width: "100%",
+                }}
+              >
+                🔥 TABATA
+              </p>
             </div>
           </div>
-          <div className="col-6" style={{ padding: "0 0 0 20px" }}>
+          <div
+            className="col-6"
+            style={{ padding: "0 0 0 20px", cursor: "pointer" }}
+            onClick={() => setFilter("yoga")}
+          >
             <img src="https://i.imgur.com/kSnbEOJ.jpg?1" />
-            <p style={{ textAlign: "center", backgroundColor: "rgba(0,0,0, 0.7)", color:"white", padding: "20px 0 20px 0" }}>
-              🌺YOGA: Thursdays at 18:00 CET
-            </p>
+            <div
+              style={{
+                position: "absolute",
+                top: "40px",
+                left: "20px",
+                width: "90%",
+              }}
+            >
+              <p
+                style={{
+                  backgroundColor: "rgba(0,0,0, 0.7)",
+                  color: "white",
+                  padding: "20px 0 20px 10px",
+                }}
+              >
+                🌺 YOGA
+              </p>
+            </div>
+          </div>
+          <div
+            className="col-6"
+            style={{ padding: "0 0 0 0px", cursor: "pointer" }}
+            onClick={() => setFilter("physio")}
+          >
+            <img
+              src="https://i.imgur.com/BndkCI3.jpg"
+              style={{
+                width: "360px",
+                height: "360px",
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                top: "40px",
+                left: "0",
+                width: "90%",
+              }}
+            >
+              <p
+                style={{
+                  backgroundColor: "rgba(0,0,0, 0.7)",
+                  color: "white",
+                  padding: "20px 0 20px 10px",
+                }}
+              >
+                🌊 PHYSIO
+              </p>
+            </div>
+          </div>
+          <div
+            className="col-6"
+            style={{ padding: "0 0 0 20px", cursor: "pointer" }}
+            onClick={() => setFilter("endurance")}
+          >
+            <img
+              src="https://i.imgur.com/fPe8BLx.jpg"
+              style={{
+                width: "360px",
+                height: "360px",
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                top: "40px",
+                left: "20px",
+                width: "90%",
+              }}
+            >
+              <p
+                style={{
+                  backgroundColor: "rgba(0,0,0, 0.7)",
+                  color: "white",
+                  padding: "20px 0 20px 10px",
+                }}
+              >
+                🍁 ENDURANCE
+              </p>
+            </div>
+          </div>
+
+          <div
+            className="col-6"
+            style={{ padding: "0 20px 0 0", cursor: "pointer" }}
+            onClick={() => setFilter("")}
+          >
+            <img src="https://i.imgur.com/w0dGyEa.jpg" />
+            <div
+              style={{
+                position: "absolute",
+                top: "40px",
+                left: "0px",
+                width: "90%",
+              }}
+            >
+              <p
+                style={{
+                  backgroundColor: "rgba(0,0,0, 0.7)",
+                  color: "white",
+                  padding: "20px 0 20px 10px",
+                }}
+              >
+                🔥🌺🌊🍁 ALL
+              </p>
+            </div>
           </div>
 
           {/*<img className="col-6" src="https://i.imgur.com/WDUP5Gv.jpg?1" style={{}}/>*/}
         </div>
-        <h3 style={{ textAlign: "center" }}>DETAILS</h3>
+        {/*<h3 style={{ textAlign: "center" }}>DETAILS</h3>
         <p style={{ textAlign: "center" }}>
           Link: https://meet.jit.si/fitwithmia
         </p>
-        <p style={{ textAlign: "center" }}>Password: fitwithmia</p>
+        <p style={{ textAlign: "center" }}>Password: fitwithmia</p>*/}
         <h3 style={{ textAlign: "center" }}>ALL TRAININGS</h3>
         <p style={{ textAlign: "center", fontSize: "15px", color: "grey" }}>
-          {data.allMarkdownRemark.totalCount} Posts
+          {filteredData.length} Posts
         </p>
 
         <table style={{ textAlign: "justify", textJustify: "inter-word" }}>
@@ -56,14 +193,17 @@ export default ({ data }) => {
             </tr>
           </thead>
           <tbody>
-            {data.allMarkdownRemark.edges.map(({ node }, index) => (
+            {filteredData.map(({ node }, index) => (
               <tr key={index}>
                 <td>{node.frontmatter.date}</td>
-                <Link to={node.fields.slug} style={{ backgroundImage: "none" }}>
-                  <td style={{ color: "teal" }}>
+                <td>
+                  <Link
+                    to={node.fields.slug}
+                    style={{ backgroundImage: "none", color: "teal" }}
+                  >
                     {node.frontmatter.title.split(" ")[0]}
-                  </td>
-                </Link>
+                  </Link>
+                </td>
                 {/*<td>{node.frontmatter.trainer}</td>*/}
                 <td>{removeTrainerFromExcerpt(node.excerpt)}</td>
               </tr>
