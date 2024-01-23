@@ -19,7 +19,11 @@ const TrainingButton = ({ classType, imageUrl, icon, setFilter }) => (
   >
     <img
       src={imageUrl}
-      style={{ position: "relative", width: "360px", height: "360px" }}
+      style={{
+        position: "relative",
+        width: isMobile ? "120px" : "360px",
+        height: isMobile ? "120px" : "360px",
+      }}
     />
     <div
       style={{
