@@ -7,14 +7,79 @@ import { BackgroundVideo } from "../components/video.js"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./index.css"
 import { ReactComponent as ReactLogo } from "./logo.svg"
+import { isMobile } from "../utils/device.js"
+
+const TrainingButton = ({ classType, imageUrl, icon, setFilter }) => (
+  <div
+    className="col-6"
+    style={{
+      padding: "0 20px 0 0",
+      position: "relative",
+      cursor: "pointer",
+    }}
+    onClick={() => setFilter(classType)}
+  >
+    <img
+      src={imageUrl}
+      style={{ position: "relative", width: "360px", height: "360px" }}
+    />
+    <div
+      style={{
+        position: "absolute",
+        top: "40px",
+        left: "0",
+        width: "90%",
+      }}
+    >
+      <p
+        style={{
+          backgroundColor: "rgba(0,0,0, 0.7)",
+          color: "white",
+          padding: "20px 0 20px 10px",
+          width: "100%",
+        }}
+      >
+        {`${isMobile() ? "" : icon + " "}${classType.toUpperCase()}`}
+      </p>
+    </div>
+  </div>
+)
+
+const classes = [
+  {
+    classType: "tabata",
+    imageUrl: "https://i.imgur.com/iOw2mwe.jpg?1",
+    icon: "🔥",
+  },
+  {
+    classType: "yoga",
+    imageUrl: "https://i.imgur.com/kSnbEOJ.jpg?1",
+    icon: "🌺",
+  },
+  {
+    classType: "physio",
+    imageUrl: "https://i.imgur.com/BndkCI3.jpg",
+    icon: "🌊",
+  },
+  {
+    classType: "endurance",
+    imageUrl: "https://i.imgur.com/fPe8BLx.jpg",
+    icon: "🍁",
+  },
+  {
+    classType: "all",
+    imageUrl: "https://i.imgur.com/w0dGyEa.jpg",
+    icon: "🔥🌺🌊🍁",
+  },
+]
 
 export default ({ data }) => {
   console.log(data)
   const [filter, setFilter] = React.useState("")
-  console.log("filter", filter)
   const filteredData = data.allMarkdownRemark.edges.filter(n => {
     return n.node.frontmatter.title.toLowerCase().includes(filter)
   })
+
   return (
     <div>
       {/*<BackgroundVideo />
@@ -24,7 +89,7 @@ export default ({ data }) => {
         <Carousel />
         <h3 style={{ textAlign: "center" }}>CLASSES</h3>
         <div className="row" style={{ margin: "0" }}>
-          <div
+          {/*<div
             className="col-6"
             style={{
               padding: "0 20px 0 0",
@@ -53,7 +118,7 @@ export default ({ data }) => {
                   width: "100%",
                 }}
               >
-                🔥 TABATA
+                {`${isMobile() ? "" : "🔥 "}TABATA`}
               </p>
             </div>
           </div>
@@ -78,7 +143,7 @@ export default ({ data }) => {
                   padding: "20px 0 20px 10px",
                 }}
               >
-                🌺 YOGA
+                {`${isMobile() ? "" : "🌺 "}YOGA`}
               </p>
             </div>
           </div>
@@ -109,7 +174,7 @@ export default ({ data }) => {
                   padding: "20px 0 20px 10px",
                 }}
               >
-                🌊 PHYSIO
+                {`${isMobile() ? "" : "🌊 "}PHYSIO`}
               </p>
             </div>
           </div>
@@ -140,7 +205,7 @@ export default ({ data }) => {
                   padding: "20px 0 20px 10px",
                 }}
               >
-                🍁 ENDURANCE
+                {`${isMobile() ? "" : "🍁 "}ENDURANCE`}
               </p>
             </div>
           </div>
@@ -166,11 +231,18 @@ export default ({ data }) => {
                   padding: "20px 0 20px 10px",
                 }}
               >
-                🔥🌺🌊🍁 ALL
+                {`${isMobile() ? "" : "🔥🌺🌊🍁 "}ALL`}
               </p>
             </div>
-          </div>
-
+          </div>*/}
+          {classes.map(item => (
+            <TrainingButton
+              classType={item.classType}
+              imageUrl={item.imageUrl}
+              icon={item.icon}
+              setFilter={setFilter}
+            />
+          ))}
           {/*<img className="col-6" src="https://i.imgur.com/WDUP5Gv.jpg?1" style={{}}/>*/}
         </div>
         {/*<h3 style={{ textAlign: "center" }}>DETAILS</h3>

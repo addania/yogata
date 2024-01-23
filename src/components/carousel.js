@@ -16,6 +16,7 @@ import pic13 from "./img/pic13.jpg"
 import pic14 from "./img/pic14.jpg"
 import pic15 from "./img/pic15.jpg"
 import pic16 from "./img/pic16.jpg"
+import { isMobile } from "../utils/device.js"
 
 const imageArray = [
   pic1,
@@ -76,30 +77,46 @@ export class Carousel extends React.Component {
             width: "100%",
           }}
         />
-        <div className="label moveLabel1"
+        <div
+          className="label moveLabel1"
           style={{
             position: "absolute",
             top: "40px",
             left: "0",
             backgroundColor: "rgba(0,0,0, 0.7)",
           }}
-        ><p style={{ color: "white", margin: "20px 20px 0px 20px",fontSize: "38px", lineHeight: "38px" }}>SPORT ADVENTURES</p>
-          <p style={{ color: "white", margin: "20px" }}>
-            Welcome to my free online trainings
-          </p>
-        </div>
-        <div className="label moveLabel2"
-          style={{
-            position: "absolute",
-            bottom: "40px",
-            right: "0",
-            backgroundColor: "rgba(0,0,0, 0.7)",
-          }}
         >
-          <p style={{ color: "white", margin: "20px" }}>
-            Join Yoga & Tabata classes
+          <p
+            style={{
+              color: "white",
+              margin: "20px 20px 0px 20px",
+              fontSize: "38px",
+              lineHeight: "38px",
+            }}
+          >
+            SPORT ADVENTURES
           </p>
+          {!isMobile() && (
+            <p style={{ color: "white", margin: "20px" }}>
+              Welcome to my free online trainings
+            </p>
+          )}
         </div>
+        {!isMobile() && (
+          <div
+            className="label moveLabel2"
+            style={{
+              position: "absolute",
+              bottom: "40px",
+              right: "0",
+              backgroundColor: "rgba(0,0,0, 0.7)",
+            }}
+          >
+            <p style={{ color: "white", margin: "20px" }}>
+              Join Yoga & Tabata classes
+            </p>
+          </div>
+        )}
       </div>
     )
   }
