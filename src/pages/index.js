@@ -7,7 +7,7 @@ import { BackgroundVideo } from "../components/video.js"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./index.css"
 import { ReactComponent as ReactLogo } from "./logo.svg"
-import { isMobile } from "../utils/device.js"
+import { isMobile } from "react-device-detect"
 
 const TrainingButton = ({ classType, imageUrl, icon, setFilter }) => (
   <div
@@ -39,7 +39,7 @@ const TrainingButton = ({ classType, imageUrl, icon, setFilter }) => (
           width: "100%",
         }}
       >
-        {`${isMobile() ? "" : icon + " "}${classType.toUpperCase()}`}
+        {`${isMobile ? "" : icon + " "}${classType.toUpperCase()}`}
       </p>
     </div>
   </div>
@@ -88,7 +88,10 @@ export default ({ data }) => {
       <Layout>
         <Carousel />
         <h3 style={{ textAlign: "center" }}>CLASSES</h3>
-        <div className="row" style={{ margin: "0" }}>
+        <div
+          className="row"
+          style={{ margin: "0", display: "flex", flexWrap: "wrap" }}
+        >
           {/*<div
             className="col-6"
             style={{

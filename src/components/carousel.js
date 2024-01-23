@@ -16,7 +16,7 @@ import pic13 from "./img/pic13.jpg"
 import pic14 from "./img/pic14.jpg"
 import pic15 from "./img/pic15.jpg"
 import pic16 from "./img/pic16.jpg"
-import { isMobile } from "../utils/device.js"
+import { isMobile } from "react-device-detect"
 
 const imageArray = [
   pic1,
@@ -96,13 +96,13 @@ export class Carousel extends React.Component {
           >
             SPORT ADVENTURES
           </p>
-          {!isMobile() && (
+          {!isMobile && (
             <p style={{ color: "white", margin: "20px" }}>
               Welcome to my free online trainings
             </p>
           )}
         </div>
-        {!isMobile() && (
+        {!isMobile && (
           <div
             className="label moveLabel2"
             style={{
