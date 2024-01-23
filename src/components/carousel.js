@@ -89,9 +89,9 @@ export class Carousel extends React.Component {
           <p
             style={{
               color: "white",
-              margin: "20px 20px 0px 20px",
-              fontSize: "38px",
-              lineHeight: "38px",
+              margin: isMobile ? "8px 8px 0px 8px" : "20px 20px 0px 20px",
+              fontSize: isMobile ? "16px" : "38px",
+              lineHeight: isMobile ? "16px" : "38px",
             }}
           >
             SPORT ADVENTURES
