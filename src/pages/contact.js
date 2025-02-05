@@ -8,7 +8,7 @@ export default () => (
   <Layout>
     <div style={{ textAlign: "center" }}>
       <Carousel />
-      <p>Are you interested in a personal trainings?</p>
+      <p>Are you interested in personal trainings?</p>
       <p>
         E-mail me:
 
